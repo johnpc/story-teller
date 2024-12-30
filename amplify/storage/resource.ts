@@ -5,6 +5,7 @@ export const storage = defineStorage({
   isDefault: true,
   access: (allow) => ({
     "pictures/*": [allow.authenticated.to(["read", "write", "delete"])],
+    "textfiles/*": [allow.authenticated.to(["read", "write", "delete"])],
   }),
 });
 
@@ -12,5 +13,6 @@ export const knowledgeBaseBucket = defineStorage({
   name: "knowledgeBaseBucket",
   access: (allow) => ({
     "textfiles/*": [allow.authenticated.to(["read", "write", "delete"])],
+    "pictures/*": [allow.authenticated.to(["read", "write", "delete"])],
   }),
 });
